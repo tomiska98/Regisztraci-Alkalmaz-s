@@ -35,19 +35,20 @@ namespace RegisztracioAlkalmazas
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            List<string> lista = new List<string>();
+            lista.Add("Uszás");
+            lista.Add("Horgászat");
+            lista.Add("Futás");
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             string uj_hobbi = (textBox2.Text);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Add(textBox2.Text);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace RegisztracioAlkalmazas
             {
                 textBox1.Text = reader.ReadLine();
                 dateTimePicker1.Text = reader.ReadLine();
+
                 if (radioButton1.Checked == true)
                 {
                     reader.ReadLine();
@@ -101,11 +103,19 @@ namespace RegisztracioAlkalmazas
                 }
                     MessageBox.Show("Sikertelen mentés");
 
-
-                for (int i = 0; i < listBox1.Items.Count; i++)
-                {
-                    reader.ReadLine((string)listBox1.Items[i]);
+                foreach(string element in lista)
+                { 
+                    listBox1.Items.Add(listBox1.[i]);
+                    reader.ReadLine();
                 }
+                
+
+
+               /*/ for (int i = 0; i < listBox1.Items.Count; i++)
+                {
+                    listBox1.Items.Add(listBox1.[i]);
+                }
+              /*/
 
 
             }
